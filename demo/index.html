@@ -9,21 +9,7 @@
   </style>
 </head>
 <body>
-  <div id="demo"></div>
-
-  <script type="module">
-    import { html, render } from 'lit';
-    import '../jwt-auth-component.js';
-
-    const title = 'Hello owc World!';
-    render(
-      html`
-        <jwt-auth-component .title=${title}>
-          some light-dom
-        </jwt-auth-component>
-      `,
-      document.querySelector('#demo')
-    );
-  </script>
+  <jwt-auth></jwt-auth>
+  <script type="module" src="../src/JwtAuthComponent.js"></script>
 </body>
 </html>

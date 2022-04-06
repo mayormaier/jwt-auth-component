@@ -79,3 +79,5 @@ export class JwtAuthComponent extends LitElement {
     `
   }
 }
+
+window.customElements.define('jwt-auth', JwtAuthComponent);
