@@ -1,15 +1,26 @@
-<!doctype html>
-<html lang="en-GB">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <style>
     body {
       background: #fafafa;
+      max-width: 100%;
+      margin: auto;
+      padding: 50px;
+      font-family: Helvetica, sans-serif;
     }
   </style>
 </head>
 <body>
   <jwt-auth></jwt-auth>
+  <div class="status">
+    <h2>Login Status</h2>
+  </div>
+  <script src="./index.js" defer></script>
   <script type="module" src="../src/JwtAuthComponent.js"></script>
 </body>
 </html>

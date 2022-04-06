@@ -31,13 +31,13 @@ export class JwtAuthComponent extends LitElement {
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
       if (propName === 'authenticated' && this[propName]) {
-        this.dispatchEvent(
-          new CustomEvent('auth-success', {
-            detail: {
-              token: window.localStorage.getItem('comment-jwt'),
-            },
-          })
-        );
+        this.dispatchEvent(new CustomEvent('auth-success', {
+          bubbles: true,
+          composed: true,
+          detail: {
+            token: window.localStorage.getItem('comment-jwt'),
+          },
+        }));
       }
     });
   }
@@ -69,7 +69,7 @@ export class JwtAuthComponent extends LitElement {
   render() {
     if (this.authenticated) {
       return html`
-      <h2>jwt!</h2>
+      <span></span>
     `;
     } 
     return html`
@@ -81,3 +81,4 @@ export class JwtAuthComponent extends LitElement {
 }
 
 window.customElements.define('jwt-auth', JwtAuthComponent);
+export default JwtAuthComponent;
