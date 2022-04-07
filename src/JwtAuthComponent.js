@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 
-export class JwtAuthComponent extends LitElement {
+export default class JwtAuthComponent extends LitElement {
   static get styles() {
     return css`
       :host {
@@ -81,4 +81,3 @@ export class JwtAuthComponent extends LitElement {
 }
 
 window.customElements.define('jwt-auth', JwtAuthComponent);
-export default JwtAuthComponent;
