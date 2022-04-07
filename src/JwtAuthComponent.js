@@ -5,15 +5,23 @@ export default class JwtAuthComponent extends LitElement {
     return css`
       :host {
         display: block;
-        padding: 25px;
         color: var(--jwt-auth-component-text-color, #000);
+      }
+
+      #hidden {
+        visibility: hidden;
+        height: 0px;
+        width: 0px;
+        padding: 0px;
+        margin: 0px;
       }
     `;
   }
 
   static get properties() {
     return {
-      authenticated: { type: Boolean }
+      authenticated: { type: Boolean },
+      authEndpoint: {type: String, Reflect: true}
     };
   }
 
@@ -25,6 +33,9 @@ export default class JwtAuthComponent extends LitElement {
       // if there is not authenticated = false
     } else {
       this.authenticated = false
+    }
+    if (!this.authEndpoint){
+      this.authEndpoint = "http://localhost:3000/api/auth/"
     }
   }
 
@@ -43,7 +54,7 @@ export default class JwtAuthComponent extends LitElement {
   }
 
   sendAuthRequest(){
-    const authAPIEndpoint = "http://localhost:3000/api/auth/";
+    const authAPIEndpoint = this.authEndpoint;
     const authBody = {
       username: this.shadowRoot.querySelector('#username').value
     };
@@ -69,7 +80,7 @@ export default class JwtAuthComponent extends LitElement {
   render() {
     if (this.authenticated) {
       return html`
-      <span></span>
+      <span id="hidden"></span>
     `;
     } 
     return html`
