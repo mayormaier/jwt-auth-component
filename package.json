@@ -2,7 +2,7 @@
   "name": "jwt-auth-component",
   "description": "Webcomponent jwt-auth-component to broker the login and authentication process based on JSON Web Tokens. Following open-wc recommendations.",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": {
     "name": "Andrew Maier",
     "email": "maierandrewd@gmail.com",
